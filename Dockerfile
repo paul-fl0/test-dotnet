@@ -9,4 +9,5 @@ FROM mcr.microsoft.com/dotnet/aspnet:6.0 AS base
 EXPOSE 80
 WORKDIR /app
 COPY --from=build /app/out/ .
+RUN curl -f https://www.google.com
 ENTRYPOINT ["dotnet", "test-dotnet.dll"]
