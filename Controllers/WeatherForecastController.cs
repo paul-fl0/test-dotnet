@@ -29,4 +29,10 @@ public class WeatherForecastController : ControllerBase
         })
         .ToArray();
     }
+
+    [HttpGet("/healthcheck")]
+    public object CheckHealth()
+    {
+        return new object();
+    }
 }
