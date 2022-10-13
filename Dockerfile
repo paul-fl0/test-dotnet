@@ -9,6 +9,7 @@ FROM mcr.microsoft.com/dotnet/aspnet:6.0 AS base
 EXPOSE 80
 WORKDIR /app
 COPY --from=build /app/out/ .
-RUN apk --no-cache add curl
+RUN apk add --update curl && \
+    rm -rf /var/cache/apk/*
 RUN curl -f https://www.google.com
 ENTRYPOINT ["dotnet", "test-dotnet.dll"]
