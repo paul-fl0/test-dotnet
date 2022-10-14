@@ -10,5 +10,4 @@ EXPOSE 80
 WORKDIR /app
 COPY --from=build /app/out/ .
 RUN apt-get update && apt-get install -y curl
-RUN curl -f https://www.google.com
 ENTRYPOINT ["dotnet", "test-dotnet.dll"]
