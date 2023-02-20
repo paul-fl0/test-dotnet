@@ -34,6 +34,5 @@ public class WeatherForecastController : ControllerBase
     public object CheckHealth()
     {
         return new object();
-        xxx
     }
 }
